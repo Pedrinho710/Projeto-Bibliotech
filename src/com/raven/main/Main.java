@@ -1,13 +1,13 @@
 package com.raven.main;
 
+import com.raven.component.Message;
 import com.raven.component.PanelCover;
 import com.raven.component.PanelLoading;
 import com.raven.component.PanelLoginAndRegister;
-import com.raven.connection.DatabaseConnection;
-
+import com.raven.component.PanelVerifyCode;
+import com.raven.model.ModelUser;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
@@ -23,8 +23,9 @@ public class Main extends javax.swing.JFrame {
     private MigLayout layout;
     private PanelCover cover;
     private PanelLoading loading;
+    private PanelVerifyCode verifyCode;
     private PanelLoginAndRegister loginAndRegister;
-    private boolean isLogin = true;
+    private boolean isLogin;
     private final double addSize = 30;
     private final double coverSize = 40;
     private final double loginSize = 60;
@@ -38,7 +39,8 @@ public class Main extends javax.swing.JFrame {
         layout = new MigLayout("fill, insets 0");
         cover = new PanelCover();
         loading = new PanelLoading();
-        ActionListener eventRegister= new ActionListener() {
+        verifyCode = new PanelVerifyCode();
+        ActionListener eventRegister = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 register();
@@ -94,11 +96,11 @@ public class Main extends javax.swing.JFrame {
         animator.setResolution(0);  //  for smooth animation
         bg.setLayout(layout);
         bg.setLayer(loading, JLayeredPane.POPUP_LAYER);
+        bg.setLayer(verifyCode, JLayeredPane.POPUP_LAYER);
         bg.add(loading, "pos 0 0 100% 100%");
-        bg.add(cover, "width " + coverSize + "%, pos " + (isLogin ? "1al" : "0al") + " 0 n 100%");
-        bg.add(loginAndRegister, "width " + loginSize + "%, pos " + (isLogin ? "0al" : "1al") + " 0 n 100%"); //  1al as 100%
-        loginAndRegister.showRegister(!isLogin);
-        cover.login(isLogin);
+        bg.add(verifyCode, "pos 0 0 100% 100%");
+        bg.add(cover, "width " + coverSize + "%, pos 0al 0 n 100%");
+        bg.add(loginAndRegister, "width " + loginSize + "%, pos 1al 0 n 100%"); //  1al as 100%
         cover.addEvent(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -108,10 +110,68 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
+
     private void register() {
-        loading.setVisible(true);
-        System.out.println("Click Register");
+        ModelUser user = loginAndRegister.getUser();
+        // loading.setVisible(true);
+        showMessage(Message.MessageType.ERROR, "Test Message");
     }
+
+    private void showMessage(Message.MessageType messageType, String message) {
+        Message ms = new Message();
+        ms.showMessage(messageType, message);
+        TimingTarget target = new TimingTargetAdapter() {
+            @Override
+            public void begin() {
+                if (!ms.isShow()) {
+                    bg.add(ms, "pos 0.5al -30", 0); //  Insert to bg fist index 0
+                    ms.setVisible(true);
+                    bg.repaint();
+                }
+            }
+
+            @Override
+            public void timingEvent(float fraction) {
+                float f;
+                if (ms.isShow()) {
+                    f = 40 * (1f - fraction);
+                } else {
+                    f = 40 * fraction;
+                }
+                layout.setComponentConstraints(ms, "pos 0.5al " + (int) (f - 30));
+                bg.repaint();
+                bg.revalidate();
+            }
+
+            @Override
+            public void end() {
+                if (ms.isShow()) {
+                    bg.remove(ms);
+                    bg.repaint();
+                    bg.revalidate();
+                } else {
+                    ms.setShow(true);
+                }
+            }
+        };
+        Animator animator = new Animator(300, target);
+        animator.setResolution(0);
+        animator.setAcceleration(0.5f);
+        animator.setDeceleration(0.5f);
+        animator.start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(2000);
+                    animator.start();
+                } catch (InterruptedException e) {
+                    System.err.println(e);
+                }
+            }
+        }).start();
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -173,14 +233,8 @@ public class Main extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
-        try {
-            DatabaseConnection.getInstance().connectToDatabase();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Main().setVisible(true);
