@@ -5,9 +5,15 @@ import com.raven.component.PanelCover;
 import com.raven.component.PanelLoading;
 import com.raven.component.PanelLoginAndRegister;
 import com.raven.component.PanelVerifyCode;
+import com.raven.connection.DatabaseConnection;
+import com.raven.model.ModelLogin;
+import com.raven.model.ModelMessage;
 import com.raven.model.ModelUser;
+import com.raven.service.ServiceMail;
+import com.raven.service.ServiceUser;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
@@ -29,6 +35,7 @@ public class Main extends javax.swing.JFrame {
     private final double addSize = 30;
     private final double coverSize = 40;
     private final double loginSize = 60;
+    private ServiceUser service;
 
     public Main() {
         initComponents();
@@ -36,6 +43,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void init() {
+        service = new ServiceUser();
         layout = new MigLayout("fill, insets 0");
         cover = new PanelCover();
         loading = new PanelLoading();
@@ -46,7 +54,13 @@ public class Main extends javax.swing.JFrame {
                 register();
             }
         };
-        loginAndRegister = new PanelLoginAndRegister(eventRegister);
+        ActionListener eventLogin = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                login();
+            }
+        };
+        loginAndRegister = new PanelLoginAndRegister(eventRegister, eventLogin);
         TimingTarget target = new TimingTargetAdapter() {
             @Override
             public void timingEvent(float fraction) {
@@ -109,12 +123,72 @@ public class Main extends javax.swing.JFrame {
                 }
             }
         });
+        verifyCode.addEventButtonOK(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                try {
+                    ModelUser user = loginAndRegister.getUser();
+                    if (service.verifyCodeWithUser(user.getUserID(), verifyCode.getInputCode())) {
+                        service.doneVerify(user.getUserID());
+                        showMessage(Message.MessageType.SUCCESS, "Register sucess");
+                        verifyCode.setVisible(false);
+                    } else {
+                        showMessage(Message.MessageType.ERROR, "Verify code incorrect");
+                    }
+                } catch (SQLException e) {
+                    showMessage(Message.MessageType.ERROR, "Error");
+                }
+            }
+        });
     }
 
     private void register() {
         ModelUser user = loginAndRegister.getUser();
-        // loading.setVisible(true);
-        showMessage(Message.MessageType.ERROR, "Test Message");
+        try {
+            if (service.checkDuplicateUser(user.getUserName())) {
+                showMessage(Message.MessageType.ERROR, "User name already exit");
+            } else if (service.checkDuplicateEmail(user.getEmail())) {
+                showMessage(Message.MessageType.ERROR, "Email already exit");
+            } else {
+                service.insertUser(user);
+                sendMain(user);
+            }
+        } catch (SQLException e) {
+            showMessage(Message.MessageType.ERROR, "Error Register");
+        }
+    }
+
+    private void login() {
+        ModelLogin data = loginAndRegister.getDataLogin();
+        try {
+            ModelUser user = service.login(data);
+            if (user != null) {
+                this.dispose();
+                MainSystem.main(user);
+            } else {
+                showMessage(Message.MessageType.ERROR, "Email and Password incorrect");
+            }
+
+        } catch (SQLException e) {
+            showMessage(Message.MessageType.ERROR, "Error Login");
+        }
+    }
+
+    private void sendMain(ModelUser user) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                loading.setVisible(true);
+                ModelMessage ms = new ServiceMail().sendMain(user.getEmail(), user.getVerifyCode());
+                if (ms.isSuccess()) {
+                    loading.setVisible(false);
+                    verifyCode.setVisible(true);
+                } else {
+                    loading.setVisible(false);
+                    showMessage(Message.MessageType.ERROR, ms.getMessage());
+                }
+            }
+        }).start();
     }
 
     private void showMessage(Message.MessageType messageType, String message) {
@@ -210,7 +284,7 @@ public class Main extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public static void main(String args[]) {
+      public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -235,13 +309,18 @@ public class Main extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        try {
+            DatabaseConnection.getInstance().connectToDatabase();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Main().setVisible(true);
             }
         });
     }
-
+      
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLayeredPane bg;
     // End of variables declaration//GEN-END:variables
