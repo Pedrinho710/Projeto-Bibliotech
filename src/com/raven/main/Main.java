@@ -146,9 +146,9 @@ public class Main extends javax.swing.JFrame {
         ModelUser user = loginAndRegister.getUser();
         try {
             if (service.checkDuplicateUser(user.getUserName())) {
-                showMessage(Message.MessageType.ERROR, "User name already exit");
+                showMessage(Message.MessageType.ERROR, "Este usuáio já existe");
             } else if (service.checkDuplicateEmail(user.getEmail())) {
-                showMessage(Message.MessageType.ERROR, "Email already exit");
+                showMessage(Message.MessageType.ERROR, "Este e-mail já existe");
             } else {
                 service.insertUser(user);
                 sendMain(user);
@@ -166,11 +166,11 @@ public class Main extends javax.swing.JFrame {
                 this.dispose();
                 MainSystem.main(user);
             } else {
-                showMessage(Message.MessageType.ERROR, "Email and Password incorrect");
+                showMessage(Message.MessageType.ERROR, "Email ou Senha Inválidos");
             }
 
         } catch (SQLException e) {
-            showMessage(Message.MessageType.ERROR, "Error Login");
+            showMessage(Message.MessageType.ERROR, "Erro ao Registrar");
         }
     }
 
