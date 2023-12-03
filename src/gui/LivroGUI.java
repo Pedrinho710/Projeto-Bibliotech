@@ -2,7 +2,6 @@ package gui;
 
 import com.raven.model.ModelLivro;
 import dao.LivroDAO;
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -23,19 +22,7 @@ public class LivroGUI extends javax.swing.JFrame  implements ActionListener{
             livro.setPrateleira(lbPrateleira.getText());
             livro.setEstante(lbEstante.getText());
             livro.setResumo(lbResumo.getText());
-            StringBuilder generosSelecionados = new StringBuilder();
-            for (Component component : panelGenero.getComponents()) {
-            if (component instanceof checkAA) {
-                checkAA checkBox = (checkAA) component;
-                if (checkBox.isSelected()) {
-                    if (generosSelecionados.length() > 0) {
-                        generosSelecionados.append(", "); 
-                    }
-                    generosSelecionados.append(checkBox.getText());
-                }
-            }
-        }
-        livro.setGenero(generosSelecionados.toString());
+            livro.setIbsn(lbIBSN.getText());
             try {
                 int nota = Integer.parseInt(lbNota.getText());
                 livro.setNota(nota);
