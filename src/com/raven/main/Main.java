@@ -145,7 +145,7 @@ public class Main extends javax.swing.JFrame {
     private void register() {
         ModelLogin data = loginAndRegister.getDataLogin();
         try {
-            ModelUser user = service.login(data);
+            ModelUser user = service.loginADM(data);
             if (user != null) {
                 this.dispose();
                 MainSystem.main(user);
