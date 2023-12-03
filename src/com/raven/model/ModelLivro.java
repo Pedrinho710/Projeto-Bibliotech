@@ -5,6 +5,34 @@ package com.raven.model;
 public class ModelLivro {
 
     /**
+     * @return the resumo
+     */
+    public String getResumo() {
+        return resumo;
+    }
+
+    /**
+     * @param resumo the resumo to set
+     */
+    public void setResumo(String resumo) {
+        this.resumo = resumo;
+    }
+
+    /**
+     * @return the genero
+     */
+    public String getGenero() {
+        return genero;
+    }
+
+    /**
+     * @param genero the genero to set
+     */
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    /**
      * @return the autor
      */
     public String getAutor() {
@@ -125,4 +153,6 @@ public class ModelLivro {
         private String prateleira;
         private String estante;
         private String ibsn;
+        private String resumo;
+        private String genero;
 }
