@@ -2,6 +2,7 @@
 package com.raven.connection;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 
@@ -41,6 +42,10 @@ public class DatabaseConnection {
 
     public void setConnection(Connection connection) {
         this.connection = connection;
+    }
+
+    public PreparedStatement prepareStatement(String insert_into_livro_titulo_editora_nota_pra) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
 
