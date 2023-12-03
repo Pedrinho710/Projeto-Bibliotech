@@ -42,10 +42,6 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
         label.setFont(new Font("sansserif", 1, 30));
         label.setForeground(new Color(87, 17, 206));
         register.add(label);
-        MyTextField txtUser = new MyTextField();
-        txtUser.setPrefixIcon(new ImageIcon(getClass().getResource("/com/raven/icon/user.png")));
-        txtUser.setHint("Usuário");
-        register.add(txtUser, "w 60%");
         MyTextField txtEmail = new MyTextField();
         txtEmail.setPrefixIcon(new ImageIcon(getClass().getResource("/com/raven/icon/mail.png")));
         txtEmail.setHint("Email");
@@ -63,10 +59,9 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
         cmd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                String userName = txtUser.getText().trim();
                 String email = txtEmail.getText().trim();
                 String password = String.valueOf(txtPass.getPassword());
-                user = new ModelUser(0, userName, email, password);
+                dataLogin = new ModelLogin(email, password);
             }
         });
     }
