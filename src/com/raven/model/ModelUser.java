@@ -2,6 +2,76 @@ package com.raven.model;
 
 public class ModelUser {
 
+    /**
+     * @return the Status
+     */
+    public String getStatus() {
+        return Status;
+    }
+
+    /**
+     * @param Status the Status to set
+     */
+    public void setStatus(String Status) {
+        this.Status = Status;
+    }
+
+    /**
+     * @return the nome
+     */
+    public String getNome() {
+        return nome;
+    }
+
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
+     * @return the cpf
+     */
+    public String getCpf() {
+        return cpf;
+    }
+
+    /**
+     * @param cpf the cpf to set
+     */
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    /**
+     * @return the telefone
+     */
+    public String getTelefone() {
+        return telefone;
+    }
+
+    /**
+     * @param telefone the telefone to set
+     */
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    /**
+     * @return the sexo
+     */
+    public String getSexo() {
+        return sexo;
+    }
+
+    /**
+     * @param sexo the sexo to set
+     */
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
     public int getUserID() {
         return userID;
     }
@@ -65,4 +135,9 @@ public class ModelUser {
     private String email;
     private String password;
     private String verifyCode;
+    private String Status;
+    private String nome;
+    private String cpf;
+    private String telefone;
+    private String sexo;
 }
