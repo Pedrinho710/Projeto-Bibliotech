@@ -143,20 +143,21 @@ public class Main extends javax.swing.JFrame {
     }
 
     private void register() {
-        ModelUser user = loginAndRegister.getUser();
-        try {
-            if (service.checkDuplicateUser(user.getUserName())) {
-                showMessage(Message.MessageType.ERROR, "Este usuáio já existe");
-            } else if (service.checkDuplicateEmail(user.getEmail())) {
-                showMessage(Message.MessageType.ERROR, "Este e-mail já existe");
-            } else {
-                service.insertUser(user);
-                sendMain(user);
-            }
+    ModelUser user = loginAndRegister.getUser();
+    try {
+        if (service.checkDuplicateUser(user.getUserName())) {
+            showMessage(Message.MessageType.ERROR, "Este usuário já existe");
+        } else if (service.checkDuplicateEmail(user.getEmail())) {
+            showMessage(Message.MessageType.ERROR, "Este e-mail já existe");
+        } else {
+            service.insertUser(user);
+            showMessage(Message.MessageType.SUCCESS, "Cadastro realizado com sucesso");
+        }
         } catch (SQLException e) {
-            showMessage(Message.MessageType.ERROR, "Error Register");
+        showMessage(Message.MessageType.ERROR, "Erro ao realizar o cadastro");
         }
     }
+
 
     private void login() {
         ModelLogin data = loginAndRegister.getDataLogin();
