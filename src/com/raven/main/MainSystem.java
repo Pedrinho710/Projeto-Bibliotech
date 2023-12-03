@@ -4,11 +4,13 @@ import com.raven.model.ModelUser;
 import java.awt.Color;
 import javax.swing.JFrame;
 import gui.LivroGUI;
+import gui.LivroVisualizarGUI;
 
 public class MainSystem extends JFrame {
 
     private final ModelUser user;
     private LivroGUI LivroGUI;
+    private LivroVisualizarGUI LivroVisualizarGUI;
     
     public MainSystem(ModelUser user) {
         this.user = user;
@@ -151,7 +153,10 @@ public class MainSystem extends JFrame {
     }//GEN-LAST:event_btnCadastrarLivroActionPerformed
 
     private void btnVisualizarLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarLivroActionPerformed
-        // TODO add your handling code here:
+        if (LivroVisualizarGUI == null) {
+        LivroVisualizarGUI = new LivroVisualizarGUI();
+        }
+                LivroVisualizarGUI.setVisible(true);
     }//GEN-LAST:event_btnVisualizarLivroActionPerformed
 
     public static void main(ModelUser user) {
