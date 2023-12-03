@@ -31,8 +31,8 @@ public class DatabaseConnection {
         String port = "3306";
         String database = "bibliotech";
         String userName = "root";
-        /*String password = "20012003";*/
-        String password = "Val302302302";
+        String password = "20012003";
+        /*String password = "Val302302302";*/
         connection = java.sql.DriverManager.getConnection("jdbc:mysql://" + server + ":" + port + "/" + database, userName, password);
     }
 
