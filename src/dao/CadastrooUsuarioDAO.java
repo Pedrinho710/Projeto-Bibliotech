@@ -18,7 +18,7 @@ public class CadastrooUsuarioDAO {
   public void insertUsuario(ModelUser user) {
       
     try {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO user (Email, password, nome, cpf, telefone, idade, UserName, Status) VALUES (?,?,?,?,?,?,?,?)");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO user (Email, password, nome, cpf, telefone, UserName,Status, idade) VALUES (?,?,?,?,?,?,?,?)");
             ps.setString(1, user.getEmail());
             ps.setString(2, user.getPassword());
             ps.setString(3, user.getNome());

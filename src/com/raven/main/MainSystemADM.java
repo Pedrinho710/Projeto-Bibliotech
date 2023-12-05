@@ -6,11 +6,14 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import gui.CadastrooClienteGUI;
 import gui.LivroGUI;
+import gui.LivroVisualizarGUI;
+import gui.UsuarioVisualizarGUI;
 
 public class MainSystemADM extends JFrame {
 
     private final ModelUser user;
     private CadastrinhoUsuario CadastrinhoUsuario;
+    private UsuarioVisualizarGUI UsuarioVisualizarGUI;
     
     public MainSystemADM(ModelUser user) {
         this.user = user;
@@ -141,8 +144,10 @@ public class MainSystemADM extends JFrame {
     }//GEN-LAST:event_btnCadastrarUsuarioActionPerformed
 
     private void btnVisualizarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVisualizarUsuarioActionPerformed
+    if (UsuarioVisualizarGUI == null) {
+        UsuarioVisualizarGUI = new UsuarioVisualizarGUI();
+        }
+                UsuarioVisualizarGUI.setVisible(true);    }//GEN-LAST:event_btnVisualizarUsuarioActionPerformed
     
     public static void main(ModelUser user) {
         java.awt.EventQueue.invokeLater(new Runnable() {
