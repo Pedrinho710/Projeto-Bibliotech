@@ -18,7 +18,7 @@ public class CadastrooUsuarioDAO {
   public void insertUsuario(ModelUser user) {
       
     try {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO user (Email, password, nome, cpf, telefone, UserName,Status, idade) VALUES (?,?,?,?,?,?,?,?)");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO user (Email, password, nome, cpf, telefone, UserName, Status, sexo, idade) VALUES (?,?,?,?,?,?,?,?,?)");
             ps.setString(1, user.getEmail());
             ps.setString(2, user.getPassword());
             ps.setString(3, user.getNome());
@@ -26,7 +26,8 @@ public class CadastrooUsuarioDAO {
             ps.setString(5, user.getTelefone());
             ps.setString(6, user.getUserName());
             ps.setString(7, user.getStatus());
-            ps.setInt(8, user.getIdade());
+            ps.setString(8, user.getSexo());
+            ps.setInt(9, user.getIdade());
             ps.execute();
             JOptionPane.showMessageDialog(null, "Usuário Cadastrado com Sucesso!");
         } catch (SQLException ex) {
