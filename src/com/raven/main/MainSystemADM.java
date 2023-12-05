@@ -1,6 +1,7 @@
 package com.raven.main;
 
 import com.raven.model.ModelUser;
+import gui.CadastrinhoUsuario;
 import java.awt.Color;
 import javax.swing.JFrame;
 import gui.CadastrooClienteGUI;
@@ -9,7 +10,7 @@ import gui.LivroGUI;
 public class MainSystemADM extends JFrame {
 
     private final ModelUser user;
-    private CadastrooClienteGUI CadastrooClienteGUI;
+    private CadastrinhoUsuario CadastrinhoUsuario;
     
     public MainSystemADM(ModelUser user) {
         this.user = user;
@@ -17,7 +18,7 @@ public class MainSystemADM extends JFrame {
         getContentPane().setBackground(new Color(245, 245, 245));
         setSize(900, 570);
         lbUser.setText(user.getUserName());
-        CadastrooClienteGUI = new CadastrooClienteGUI();
+        CadastrinhoUsuario = new CadastrinhoUsuario();
     }
     
     @SuppressWarnings("unchecked")
@@ -132,10 +133,10 @@ public class MainSystemADM extends JFrame {
 
     private void btnCadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarUsuarioActionPerformed
       System.out.println("Botão Cadastrar Usuário Pressionado");
-    if (CadastrooClienteGUI == null) {
-        CadastrooClienteGUI = new CadastrooClienteGUI();
+    if (CadastrinhoUsuario == null) {
+        CadastrinhoUsuario = new CadastrinhoUsuario();
     }
-    CadastrooClienteGUI.setVisible(true);
+    CadastrinhoUsuario.setVisible(true);
 
     }//GEN-LAST:event_btnCadastrarUsuarioActionPerformed
 
