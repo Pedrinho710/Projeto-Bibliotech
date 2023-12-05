@@ -148,7 +148,7 @@ public class Main extends javax.swing.JFrame {
             ModelUser user = service.loginADM(data);
             if (user != null) {
                 this.dispose();
-                MainSystem.main(user);
+                MainSystemADM.main(user);
             } else {
                 showMessage(Message.MessageType.ERROR, "Email ou Senha Inválidos");
             }

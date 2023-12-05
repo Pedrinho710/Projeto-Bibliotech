@@ -3,6 +3,20 @@ package com.raven.model;
 public class ModelUser {
 
     /**
+     * @return the idade
+     */
+    public int getIdade() {
+        return idade;
+    }
+
+    /**
+     * @param idade the idade to set
+     */
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    /**
      * @return the Status
      */
     public String getStatus() {
@@ -131,6 +145,7 @@ public class ModelUser {
     }
 
     private int userID;
+    private int idade;
     private String userName;
     private String email;
     private String password;

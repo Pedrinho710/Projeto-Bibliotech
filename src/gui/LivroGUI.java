@@ -29,6 +29,51 @@ public class LivroGUI extends javax.swing.JFrame  implements ActionListener{
             } catch (NumberFormatException ex) {
                 System.out.println("Erro ao converter");
             }
+          if (checkAventura.isSelected()) {
+                livro.setGenero("Aventura");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkArte.isSelected()) {
+                livro.setGenero("Arte");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkCulinaria.isSelected()) {
+                livro.setGenero("Culinaria");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkFantasia.isSelected()) {
+                livro.setGenero("Fantasia");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkFiccao.isSelected()) {
+                livro.setGenero("Ficção");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkHorror.isSelected()) {
+                livro.setGenero("Horror");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkInfantil.isSelected()) {
+                livro.setGenero("Infantil");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkMisterioCrime.isSelected()) {
+                livro.setGenero("Misterio e Crime");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkPoesia.isSelected()) {
+                livro.setGenero("Poesia");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkReligiao.isSelected()) {
+                livro.setGenero("Religião");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkRomance.isSelected()) {
+                livro.setGenero("Romance");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkSaude.isSelected()) {
+                livro.setGenero("Saúde e Bem-estar");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkTecnico.isSelected()) {
+                livro.setGenero("Técnico");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkSociologia.isSelected()) {
+                livro.setGenero("Sociologiaa");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
+            if (checkViagem.isSelected()) {
+                livro.setGenero("Viagem");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+            }
             
             LivroDAO livroDAO = new LivroDAO();
             livroDAO.insertLivroOrUpdateLivro(livro);
@@ -61,21 +106,21 @@ public class LivroGUI extends javax.swing.JFrame  implements ActionListener{
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         panelGenero = new javax.swing.JPanel();
-        checkAA = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
-        jCheckBox13 = new javax.swing.JCheckBox();
-        jCheckBox14 = new javax.swing.JCheckBox();
-        jCheckBox15 = new javax.swing.JCheckBox();
+        checkAventura = new javax.swing.JCheckBox();
+        checkCulinaria = new javax.swing.JCheckBox();
+        checkArte = new javax.swing.JCheckBox();
+        checkFantasia = new javax.swing.JCheckBox();
+        checkFiccao = new javax.swing.JCheckBox();
+        checkHorror = new javax.swing.JCheckBox();
+        checkInfantil = new javax.swing.JCheckBox();
+        checkMisterioCrime = new javax.swing.JCheckBox();
+        checkPoesia = new javax.swing.JCheckBox();
+        checkReligiao = new javax.swing.JCheckBox();
+        checkRomance = new javax.swing.JCheckBox();
+        checkViagem = new javax.swing.JCheckBox();
+        checkTecnico = new javax.swing.JCheckBox();
+        checkSaude = new javax.swing.JCheckBox();
+        checkSociologia = new javax.swing.JCheckBox();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -127,6 +172,11 @@ public class LivroGUI extends javax.swing.JFrame  implements ActionListener{
         btnCadastrar.setBackground(new java.awt.Color(87, 17, 206));
         btnCadastrar.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastrar.setText("CADASTRAR");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(87, 17, 206));
@@ -174,123 +224,123 @@ public class LivroGUI extends javax.swing.JFrame  implements ActionListener{
         panelGenero.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Gênero", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(87, 17, 206))); // NOI18N
         panelGenero.setForeground(new java.awt.Color(0, 0, 0));
 
-        checkAA.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(checkAA);
-        checkAA.setForeground(new java.awt.Color(0, 0, 0));
-        checkAA.setText("Ação e Aventura");
+        checkAventura.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkAventura);
+        checkAventura.setForeground(new java.awt.Color(0, 0, 0));
+        checkAventura.setText("Ação e Aventura");
 
-        jCheckBox2.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox2);
-        jCheckBox2.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox2.setText("Culinária");
+        checkCulinaria.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkCulinaria);
+        checkCulinaria.setForeground(new java.awt.Color(0, 0, 0));
+        checkCulinaria.setText("Culinária");
 
-        jCheckBox3.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox3);
-        jCheckBox3.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox3.setText("Arte");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        checkArte.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkArte);
+        checkArte.setForeground(new java.awt.Color(0, 0, 0));
+        checkArte.setText("Arte");
+        checkArte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                checkArteActionPerformed(evt);
             }
         });
 
-        jCheckBox4.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox4);
-        jCheckBox4.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox4.setText("Fantasia");
+        checkFantasia.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkFantasia);
+        checkFantasia.setForeground(new java.awt.Color(0, 0, 0));
+        checkFantasia.setText("Fantasia");
 
-        jCheckBox5.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox5);
-        jCheckBox5.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox5.setText("Ficção");
+        checkFiccao.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkFiccao);
+        checkFiccao.setForeground(new java.awt.Color(0, 0, 0));
+        checkFiccao.setText("Ficção");
 
-        jCheckBox6.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox6);
-        jCheckBox6.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox6.setText("Horror");
-        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+        checkHorror.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkHorror);
+        checkHorror.setForeground(new java.awt.Color(0, 0, 0));
+        checkHorror.setText("Horror");
+        checkHorror.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox6ActionPerformed(evt);
+                checkHorrorActionPerformed(evt);
             }
         });
 
-        jCheckBox7.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox7);
-        jCheckBox7.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox7.setText("Infantil");
+        checkInfantil.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkInfantil);
+        checkInfantil.setForeground(new java.awt.Color(0, 0, 0));
+        checkInfantil.setText("Infantil");
 
-        jCheckBox8.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox8);
-        jCheckBox8.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox8.setText("Mistério e Crime");
+        checkMisterioCrime.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkMisterioCrime);
+        checkMisterioCrime.setForeground(new java.awt.Color(0, 0, 0));
+        checkMisterioCrime.setText("Mistério e Crime");
 
-        jCheckBox9.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox9);
-        jCheckBox9.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox9.setText("Poesia");
-        jCheckBox9.addActionListener(new java.awt.event.ActionListener() {
+        checkPoesia.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkPoesia);
+        checkPoesia.setForeground(new java.awt.Color(0, 0, 0));
+        checkPoesia.setText("Poesia");
+        checkPoesia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox9ActionPerformed(evt);
+                checkPoesiaActionPerformed(evt);
             }
         });
 
-        jCheckBox10.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox10);
-        jCheckBox10.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox10.setText("Religião");
-        jCheckBox10.addActionListener(new java.awt.event.ActionListener() {
+        checkReligiao.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkReligiao);
+        checkReligiao.setForeground(new java.awt.Color(0, 0, 0));
+        checkReligiao.setText("Religião");
+        checkReligiao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox10ActionPerformed(evt);
+                checkReligiaoActionPerformed(evt);
             }
         });
 
-        jCheckBox11.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox11);
-        jCheckBox11.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox11.setText("Romance");
-        jCheckBox11.addActionListener(new java.awt.event.ActionListener() {
+        checkRomance.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkRomance);
+        checkRomance.setForeground(new java.awt.Color(0, 0, 0));
+        checkRomance.setText("Romance");
+        checkRomance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox11ActionPerformed(evt);
+                checkRomanceActionPerformed(evt);
             }
         });
 
-        jCheckBox12.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox12);
-        jCheckBox12.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox12.setText("Viagem");
-        jCheckBox12.addActionListener(new java.awt.event.ActionListener() {
+        checkViagem.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkViagem);
+        checkViagem.setForeground(new java.awt.Color(0, 0, 0));
+        checkViagem.setText("Viagem");
+        checkViagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox12ActionPerformed(evt);
+                checkViagemActionPerformed(evt);
             }
         });
 
-        jCheckBox13.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox13);
-        jCheckBox13.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox13.setText("Tecnologia");
-        jCheckBox13.addActionListener(new java.awt.event.ActionListener() {
+        checkTecnico.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkTecnico);
+        checkTecnico.setForeground(new java.awt.Color(0, 0, 0));
+        checkTecnico.setText("Técnico");
+        checkTecnico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox13ActionPerformed(evt);
+                checkTecnicoActionPerformed(evt);
             }
         });
 
-        jCheckBox14.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox14);
-        jCheckBox14.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox14.setText("Saúde e Bem-Estar");
-        jCheckBox14.addActionListener(new java.awt.event.ActionListener() {
+        checkSaude.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkSaude);
+        checkSaude.setForeground(new java.awt.Color(0, 0, 0));
+        checkSaude.setText("Saúde e Bem-Estar");
+        checkSaude.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox14ActionPerformed(evt);
+                checkSaudeActionPerformed(evt);
             }
         });
 
-        jCheckBox15.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jCheckBox15);
-        jCheckBox15.setForeground(new java.awt.Color(0, 0, 0));
-        jCheckBox15.setText("Sociologia");
-        jCheckBox15.addActionListener(new java.awt.event.ActionListener() {
+        checkSociologia.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(checkSociologia);
+        checkSociologia.setForeground(new java.awt.Color(0, 0, 0));
+        checkSociologia.setText("Sociologia");
+        checkSociologia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox15ActionPerformed(evt);
+                checkSociologiaActionPerformed(evt);
             }
         });
 
@@ -301,29 +351,29 @@ public class LivroGUI extends javax.swing.JFrame  implements ActionListener{
             .addGroup(panelGeneroLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(checkAA)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox2))
+                    .addComponent(checkAventura)
+                    .addComponent(checkArte)
+                    .addComponent(checkCulinaria))
                 .addGap(35, 35, 35)
                 .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox6))
+                    .addComponent(checkFiccao)
+                    .addComponent(checkFantasia)
+                    .addComponent(checkHorror))
                 .addGap(35, 35, 35)
                 .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox9, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox7))
+                    .addComponent(checkPoesia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkMisterioCrime, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkInfantil))
                 .addGap(35, 35, 35)
                 .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox14))
+                    .addComponent(checkReligiao, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkRomance, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkSaude))
                 .addGap(35, 35, 35)
                 .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox12, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox13)
-                    .addComponent(jCheckBox15, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(checkViagem, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkTecnico)
+                    .addComponent(checkSociologia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelGeneroLayout.setVerticalGroup(
@@ -332,30 +382,30 @@ public class LivroGUI extends javax.swing.JFrame  implements ActionListener{
                 .addContainerGap()
                 .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(checkAA)
-                        .addComponent(jCheckBox4)
-                        .addComponent(jCheckBox7))
+                        .addComponent(checkAventura)
+                        .addComponent(checkFantasia)
+                        .addComponent(checkInfantil))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jCheckBox10)
-                        .addComponent(jCheckBox13)))
+                        .addComponent(checkReligiao)
+                        .addComponent(checkTecnico)))
                 .addGap(10, 10, 10)
                 .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jCheckBox3)
-                        .addComponent(jCheckBox5)
-                        .addComponent(jCheckBox8))
+                        .addComponent(checkArte)
+                        .addComponent(checkFiccao)
+                        .addComponent(checkMisterioCrime))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGeneroLayout.createSequentialGroup()
                         .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox11)
-                            .addComponent(jCheckBox15))
+                            .addComponent(checkRomance)
+                            .addComponent(checkSociologia))
                         .addGap(1, 1, 1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox12)
-                    .addComponent(jCheckBox14)
-                    .addComponent(jCheckBox9)
-                    .addComponent(jCheckBox6)
-                    .addComponent(jCheckBox2))
+                    .addComponent(checkViagem)
+                    .addComponent(checkSaude)
+                    .addComponent(checkPoesia)
+                    .addComponent(checkHorror)
+                    .addComponent(checkCulinaria))
                 .addContainerGap())
         );
 
@@ -461,41 +511,45 @@ public class LivroGUI extends javax.swing.JFrame  implements ActionListener{
         // TODO add your handling code here:
     }//GEN-LAST:event_lbTituloActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void checkArteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkArteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_checkArteActionPerformed
 
-    private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox9ActionPerformed
+    private void checkPoesiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPoesiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox9ActionPerformed
+    }//GEN-LAST:event_checkPoesiaActionPerformed
 
-    private void jCheckBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox10ActionPerformed
+    private void checkReligiaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkReligiaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox10ActionPerformed
+    }//GEN-LAST:event_checkReligiaoActionPerformed
 
-    private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
+    private void checkRomanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkRomanceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox11ActionPerformed
+    }//GEN-LAST:event_checkRomanceActionPerformed
 
-    private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
+    private void checkViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkViagemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox12ActionPerformed
+    }//GEN-LAST:event_checkViagemActionPerformed
 
-    private void jCheckBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox13ActionPerformed
+    private void checkTecnicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTecnicoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox13ActionPerformed
+    }//GEN-LAST:event_checkTecnicoActionPerformed
 
-    private void jCheckBox14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox14ActionPerformed
+    private void checkSaudeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkSaudeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox14ActionPerformed
+    }//GEN-LAST:event_checkSaudeActionPerformed
 
-    private void jCheckBox15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox15ActionPerformed
+    private void checkSociologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkSociologiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox15ActionPerformed
+    }//GEN-LAST:event_checkSociologiaActionPerformed
 
-    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+    private void checkHorrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkHorrorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox6ActionPerformed
+    }//GEN-LAST:event_checkHorrorActionPerformed
+
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -536,21 +590,21 @@ public class LivroGUI extends javax.swing.JFrame  implements ActionListener{
     private javax.swing.JButton btnCadastrar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JCheckBox checkAA;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox13;
-    private javax.swing.JCheckBox jCheckBox14;
-    private javax.swing.JCheckBox jCheckBox15;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JCheckBox checkArte;
+    private javax.swing.JCheckBox checkAventura;
+    private javax.swing.JCheckBox checkCulinaria;
+    private javax.swing.JCheckBox checkFantasia;
+    private javax.swing.JCheckBox checkFiccao;
+    private javax.swing.JCheckBox checkHorror;
+    private javax.swing.JCheckBox checkInfantil;
+    private javax.swing.JCheckBox checkMisterioCrime;
+    private javax.swing.JCheckBox checkPoesia;
+    private javax.swing.JCheckBox checkReligiao;
+    private javax.swing.JCheckBox checkRomance;
+    private javax.swing.JCheckBox checkSaude;
+    private javax.swing.JCheckBox checkSociologia;
+    private javax.swing.JCheckBox checkTecnico;
+    private javax.swing.JCheckBox checkViagem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
