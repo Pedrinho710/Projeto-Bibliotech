@@ -32,40 +32,40 @@ public class LivroGUI extends javax.swing.JFrame  implements ActionListener{
                 System.out.println("Erro ao converter");
             }
           if (checkAventura.isSelected()) {
-                livro.setGenero("Aventura");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+                livro.setGenero("Aventura");
             }
             if (checkArte.isSelected()) {
-                livro.setGenero("Arte");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+                livro.setGenero("Arte");
             }
             if (checkCulinaria.isSelected()) {
-                livro.setGenero("Culinaria");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+                livro.setGenero("Culinaria");
             }
             if (checkFantasia.isSelected()) {
-                livro.setGenero("Fantasia");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+                livro.setGenero("Fantasia");
             }
             if (checkFiccao.isSelected()) {
-                livro.setGenero("Ficção");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+                livro.setGenero("Ficção");
             }
             if (checkHorror.isSelected()) {
-                livro.setGenero("Horror");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+                livro.setGenero("Horror");
             }
             if (checkInfantil.isSelected()) {
-                livro.setGenero("Infantil");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+                livro.setGenero("Infantil");
             }
             if (checkMisterioCrime.isSelected()) {
-                livro.setGenero("Misterio e Crime");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+                livro.setGenero("Misterio e Crime");
             }
             if (checkPoesia.isSelected()) {
-                livro.setGenero("Poesia");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+                livro.setGenero("Poesia");
             }
             if (checkReligiao.isSelected()) {
-                livro.setGenero("Religião");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+                livro.setGenero("Religião");
             }
             if (checkRomance.isSelected()) {
-                livro.setGenero("Romance");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+                livro.setGenero("Romance");
             }
             if (checkTecnico.isSelected()) {
-                livro.setGenero("Técnico");// Aqui você pode realizar outras ações com base na seleção do CheckBox
+                livro.setGenero("Técnico");
             }
             
             LivroDAO livroDAO = new LivroDAO();
