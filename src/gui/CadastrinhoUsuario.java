@@ -78,6 +78,19 @@ public class CadastrinhoUsuario extends javax.swing.JFrame implements ActionList
         jPanel3 = new javax.swing.JPanel();
         checkFeminino = new javax.swing.JCheckBox();
         checkMasculino = new javax.swing.JCheckBox();
+        panelGenero = new javax.swing.JPanel();
+        checkAventura = new javax.swing.JCheckBox();
+        checkCulinaria = new javax.swing.JCheckBox();
+        checkArte = new javax.swing.JCheckBox();
+        checkFantasia = new javax.swing.JCheckBox();
+        checkFiccao = new javax.swing.JCheckBox();
+        checkHorror = new javax.swing.JCheckBox();
+        checkInfantil = new javax.swing.JCheckBox();
+        checkMisterioCrime = new javax.swing.JCheckBox();
+        checkPoesia = new javax.swing.JCheckBox();
+        checkReligiao = new javax.swing.JCheckBox();
+        checkRomance = new javax.swing.JCheckBox();
+        checkTecnico = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -238,6 +251,141 @@ public class CadastrinhoUsuario extends javax.swing.JFrame implements ActionList
                 .addComponent(checkMasculino))
         );
 
+        panelGenero.setBackground(new java.awt.Color(255, 255, 255));
+        panelGenero.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Selecione 2 gêneros preferidos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(87, 17, 206))); // NOI18N
+        panelGenero.setForeground(new java.awt.Color(0, 0, 0));
+
+        checkAventura.setBackground(new java.awt.Color(255, 255, 255));
+        checkAventura.setForeground(new java.awt.Color(0, 0, 0));
+        checkAventura.setText("Ação e Aventura");
+
+        checkCulinaria.setBackground(new java.awt.Color(255, 255, 255));
+        checkCulinaria.setForeground(new java.awt.Color(0, 0, 0));
+        checkCulinaria.setText("Culinária");
+
+        checkArte.setBackground(new java.awt.Color(255, 255, 255));
+        checkArte.setForeground(new java.awt.Color(0, 0, 0));
+        checkArte.setText("Arte");
+        checkArte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkArteActionPerformed(evt);
+            }
+        });
+
+        checkFantasia.setBackground(new java.awt.Color(255, 255, 255));
+        checkFantasia.setForeground(new java.awt.Color(0, 0, 0));
+        checkFantasia.setText("Fantasia");
+
+        checkFiccao.setBackground(new java.awt.Color(255, 255, 255));
+        checkFiccao.setForeground(new java.awt.Color(0, 0, 0));
+        checkFiccao.setText("Ficção");
+
+        checkHorror.setBackground(new java.awt.Color(255, 255, 255));
+        checkHorror.setForeground(new java.awt.Color(0, 0, 0));
+        checkHorror.setText("Horror");
+        checkHorror.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkHorrorActionPerformed(evt);
+            }
+        });
+
+        checkInfantil.setBackground(new java.awt.Color(255, 255, 255));
+        checkInfantil.setForeground(new java.awt.Color(0, 0, 0));
+        checkInfantil.setText("Infantil");
+
+        checkMisterioCrime.setBackground(new java.awt.Color(255, 255, 255));
+        checkMisterioCrime.setForeground(new java.awt.Color(0, 0, 0));
+        checkMisterioCrime.setText("Mistério ");
+
+        checkPoesia.setBackground(new java.awt.Color(255, 255, 255));
+        checkPoesia.setForeground(new java.awt.Color(0, 0, 0));
+        checkPoesia.setText("Poesia");
+        checkPoesia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkPoesiaActionPerformed(evt);
+            }
+        });
+
+        checkReligiao.setBackground(new java.awt.Color(255, 255, 255));
+        checkReligiao.setForeground(new java.awt.Color(0, 0, 0));
+        checkReligiao.setText("Religião");
+        checkReligiao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkReligiaoActionPerformed(evt);
+            }
+        });
+
+        checkRomance.setBackground(new java.awt.Color(255, 255, 255));
+        checkRomance.setForeground(new java.awt.Color(0, 0, 0));
+        checkRomance.setText("Romance");
+        checkRomance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkRomanceActionPerformed(evt);
+            }
+        });
+
+        checkTecnico.setBackground(new java.awt.Color(255, 255, 255));
+        checkTecnico.setForeground(new java.awt.Color(0, 0, 0));
+        checkTecnico.setText("Técnico");
+        checkTecnico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTecnicoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelGeneroLayout = new javax.swing.GroupLayout(panelGenero);
+        panelGenero.setLayout(panelGeneroLayout);
+        panelGeneroLayout.setHorizontalGroup(
+            panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGeneroLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(checkAventura)
+                    .addComponent(checkArte)
+                    .addComponent(checkCulinaria))
+                .addGap(25, 25, 25)
+                .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(checkFiccao)
+                    .addComponent(checkFantasia)
+                    .addComponent(checkHorror))
+                .addGap(25, 25, 25)
+                .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(checkPoesia, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkMisterioCrime, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkInfantil))
+                .addGap(20, 20, 20)
+                .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(checkReligiao, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkRomance, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkTecnico))
+                .addGap(171, 171, 171))
+        );
+        panelGeneroLayout.setVerticalGroup(
+            panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGeneroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(checkAventura)
+                        .addComponent(checkFantasia)
+                        .addComponent(checkInfantil))
+                    .addComponent(checkReligiao, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(checkArte)
+                    .addComponent(checkFiccao)
+                    .addComponent(checkMisterioCrime)
+                    .addComponent(checkRomance))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(checkPoesia)
+                        .addComponent(checkHorror)
+                        .addComponent(checkCulinaria))
+                    .addComponent(checkTecnico))
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -261,7 +409,6 @@ public class CadastrinhoUsuario extends javax.swing.JFrame implements ActionList
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel7)
                                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(BotaoCadastrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(lbUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -272,7 +419,9 @@ public class CadastrinhoUsuario extends javax.swing.JFrame implements ActionList
                                                 .addComponent(jLabel15)
                                                 .addComponent(lbIdade, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
                                                 .addComponent(lbPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(BotaoCadastrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(panelGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(7, 7, 7)
@@ -311,9 +460,11 @@ public class CadastrinhoUsuario extends javax.swing.JFrame implements ActionList
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbPerfil))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                .addGap(9, 9, 9)
+                .addComponent(panelGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(BotaoCadastrarUsuario)
-                .addGap(36, 36, 36))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -341,6 +492,30 @@ public class CadastrinhoUsuario extends javax.swing.JFrame implements ActionList
     private void lbCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbCPFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lbCPFActionPerformed
+
+    private void checkArteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkArteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkArteActionPerformed
+
+    private void checkHorrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkHorrorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkHorrorActionPerformed
+
+    private void checkPoesiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkPoesiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkPoesiaActionPerformed
+
+    private void checkReligiaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkReligiaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkReligiaoActionPerformed
+
+    private void checkRomanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkRomanceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkRomanceActionPerformed
+
+    private void checkTecnicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTecnicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkTecnicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -380,8 +555,20 @@ public class CadastrinhoUsuario extends javax.swing.JFrame implements ActionList
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoCadastrarUsuario;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JCheckBox checkArte;
+    private javax.swing.JCheckBox checkAventura;
+    private javax.swing.JCheckBox checkCulinaria;
+    private javax.swing.JCheckBox checkFantasia;
     private javax.swing.JCheckBox checkFeminino;
+    private javax.swing.JCheckBox checkFiccao;
+    private javax.swing.JCheckBox checkHorror;
+    private javax.swing.JCheckBox checkInfantil;
     private javax.swing.JCheckBox checkMasculino;
+    private javax.swing.JCheckBox checkMisterioCrime;
+    private javax.swing.JCheckBox checkPoesia;
+    private javax.swing.JCheckBox checkReligiao;
+    private javax.swing.JCheckBox checkRomance;
+    private javax.swing.JCheckBox checkTecnico;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -403,5 +590,6 @@ public class CadastrinhoUsuario extends javax.swing.JFrame implements ActionList
     private javax.swing.JTextField lbSenha;
     private javax.swing.JTextField lbTelefone;
     private javax.swing.JTextField lbUsername;
+    private javax.swing.JPanel panelGenero;
     // End of variables declaration//GEN-END:variables
 }

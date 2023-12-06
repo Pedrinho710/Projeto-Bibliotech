@@ -232,7 +232,7 @@ public class LivroGUI extends javax.swing.JFrame  implements ActionListener{
         checkMisterioCrime.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(checkMisterioCrime);
         checkMisterioCrime.setForeground(new java.awt.Color(0, 0, 0));
-        checkMisterioCrime.setText("Mistério e Crime");
+        checkMisterioCrime.setText("Mistério ");
 
         checkPoesia.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(checkPoesia);
@@ -319,15 +319,12 @@ public class LivroGUI extends javax.swing.JFrame  implements ActionListener{
                     .addComponent(checkRomance))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGeneroLayout.createSequentialGroup()
-                        .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(checkPoesia)
-                            .addComponent(checkHorror)
-                            .addComponent(checkCulinaria))
-                        .addContainerGap())
-                    .addGroup(panelGeneroLayout.createSequentialGroup()
-                        .addComponent(checkTecnico)
-                        .addContainerGap(12, Short.MAX_VALUE))))
+                    .addGroup(panelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(checkPoesia)
+                        .addComponent(checkHorror)
+                        .addComponent(checkCulinaria))
+                    .addComponent(checkTecnico))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(87, 17, 206));

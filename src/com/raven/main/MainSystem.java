@@ -1,6 +1,7 @@
 package com.raven.main;
 
 import com.raven.model.ModelUser;
+import gui.CadastrarNota;
 import java.awt.Color;
 import javax.swing.JFrame;
 import gui.LivroGUI;
@@ -11,6 +12,7 @@ public class MainSystem extends JFrame {
     private final ModelUser user;
     private LivroGUI LivroGUI;
     private LivroVisualizarGUI LivroVisualizarGUI;
+    private CadastrarNota CadastrarNota;
     
     public MainSystem(ModelUser user) {
         this.user = user;
@@ -35,6 +37,7 @@ public class MainSystem extends JFrame {
         jLabel2 = new javax.swing.JLabel();
         lbUser = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        btnCadastrarNota = new com.raven.swing.Button();
         jLabel3 = new javax.swing.JLabel();
 
         jRadioButtonMenuItem1.setSelected(true);
@@ -85,6 +88,18 @@ public class MainSystem extends JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/userIconSideBar.png"))); // NOI18N
 
+        btnCadastrarNota.setBackground(new java.awt.Color(87, 17, 206));
+        btnCadastrarNota.setBorder(null);
+        btnCadastrarNota.setForeground(new java.awt.Color(255, 255, 255));
+        btnCadastrarNota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/usericon.png"))); // NOI18N
+        btnCadastrarNota.setText("Cadastrar Nota");
+        btnCadastrarNota.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCadastrarNota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarNotaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelSideBarLayout = new javax.swing.GroupLayout(panelSideBar);
         panelSideBar.setLayout(panelSideBarLayout);
         panelSideBarLayout.setHorizontalGroup(
@@ -98,7 +113,8 @@ public class MainSystem extends JFrame {
                         .addComponent(btnCadastrarLivro, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2))
-                    .addComponent(btnVisualizarLivro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnVisualizarLivro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCadastrarNota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         panelSideBarLayout.setVerticalGroup(
@@ -114,10 +130,12 @@ public class MainSystem extends JFrame {
                         .addComponent(jLabel2))
                     .addGroup(panelSideBarLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(btnCadastrarLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnVisualizarLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(250, Short.MAX_VALUE))
+                        .addComponent(btnCadastrarLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVisualizarLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCadastrarNota, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(202, Short.MAX_VALUE))
         );
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -156,6 +174,13 @@ public class MainSystem extends JFrame {
                 LivroVisualizarGUI.setVisible(true);
     }//GEN-LAST:event_btnVisualizarLivroActionPerformed
 
+    private void btnCadastrarNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarNotaActionPerformed
+        if (CadastrarNota == null) {
+        CadastrarNota = new CadastrarNota();
+        }
+                CadastrarNota.setVisible(true);
+    }//GEN-LAST:event_btnCadastrarNotaActionPerformed
+
     public static void main(ModelUser user) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -166,6 +191,7 @@ public class MainSystem extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.swing.Button btnCadastrarLivro;
+    private com.raven.swing.Button btnCadastrarNota;
     private com.raven.swing.Button btnVisualizarLivro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

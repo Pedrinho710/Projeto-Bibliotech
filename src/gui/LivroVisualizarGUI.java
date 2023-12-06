@@ -80,7 +80,7 @@ public class LivroVisualizarGUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "titulo", "autor", "prateleria", "estante", "editora", "genero", "ibsn", "nota", "resumo"
+                "Título", "Autor", "Prateleria", "Estante", "Editora", "Gênero", "IBSN", "Média", "Resumo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -202,7 +202,7 @@ public class LivroVisualizarGUI extends javax.swing.JFrame {
         modeloTabela = new DefaultTableModel(
             new Object [][] {},
             new String [] {
-                "Título", "Autor", "Prateleira", "Estante", "Editora", "Gênero", "ISBN", "Nota", "Resumo"
+                "Título", "Autor", "Prateleira", "Estante", "Editora", "Gênero", "ISBN", "Média", "Resumo"
             }
         );
         TabelaLivro.setModel(modeloTabela);
@@ -276,7 +276,7 @@ public class LivroVisualizarGUI extends javax.swing.JFrame {
             modeloTabela = new DefaultTableModel(
                     new Object[][]{},
                     new String[]{
-                            "titulo", "autor", "prateleira", "estante", "editora", "genero", "ibsn", "nota", "resumo"
+                            "Título", "Autor", "Prateleira", "Estante", "Editora", "Gênero", "ISBN", "Média", "Resumo"
                     }
             );
 

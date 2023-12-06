@@ -4,7 +4,6 @@ import com.raven.model.ModelUser;
 import gui.CadastrinhoUsuario;
 import java.awt.Color;
 import javax.swing.JFrame;
-import gui.CadastrooClienteGUI;
 import gui.LivroGUI;
 import gui.LivroVisualizarGUI;
 import gui.UsuarioVisualizarGUI;

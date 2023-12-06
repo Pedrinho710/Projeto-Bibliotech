@@ -80,12 +80,6 @@ public class PanelLoginAndRegister extends javax.swing.JLayeredPane {
         txtPass.setPrefixIcon(new ImageIcon(getClass().getResource("/com/raven/icon/pass.png")));
         txtPass.setHint("Senha");
         login.add(txtPass, "w 60%");
-        JButton cmdForget = new JButton("Esqueceu sua Senha?");
-        cmdForget.setForeground(new Color(100, 100, 100));
-        cmdForget.setFont(new Font("sansserif", 1, 12));
-        cmdForget.setContentAreaFilled(false);
-        cmdForget.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        login.add(cmdForget);
         Button cmd = new Button();
         cmd.setBackground(new Color(87, 17, 206));
         cmd.setForeground(new Color(250, 250, 250));
